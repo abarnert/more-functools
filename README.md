@@ -50,11 +50,13 @@ Returns a function that's the equivalent of `func(*reversed(args), **kw)`.
     
     foldl(func, start, iterable)
     
-`foldl(f, 0, [1, 2, 3])` is equivalent to `f(f(f(0, 1), 2), 3)`.
+`foldl(f, 0, [1, 2, 3])` is equivalent to `f(f(f(0, 1), 2), 3)`. This is equivalent to 
+`reduce(func, iterable, start)`, and is only provided for symmetry with `foldr`.
     
     foldl1(func, iterable)
 
-`foldl1(f, iterable)` is equivalent to `foldl(f, next(iterable), iterable)`.
+`foldl1(f, iterable)` is equivalent to `foldl(f, next(iterable), iterable)`. This is
+equivalent to `reduce(func, iterable)`, and is only provided for symmetry with `foldr1`.
 
 `foldl(f, [0, 1, 2, 3])` is equivalent to `f(f(f(0, 1), 2), 3)`.
 
